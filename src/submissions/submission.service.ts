@@ -17,7 +17,7 @@ export class SubmissionService {
       <p><strong>Message:</strong> ${data.message}</p>
       `;
 
-      await this.email.sendMail('g@siska.tech', 'New Alma Labs Submission', emailBody);
+      await this.email.sendMail(process.env.EMAIL_RECIPIENT, 'New Alma Labs Submission', emailBody);
       return { message: 'Submission successful' };
     } catch (error) {
       this.logger.error(`Issue creating moment: ${error.message}`);

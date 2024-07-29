@@ -9,7 +9,7 @@ export class EmailService {
     this.transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'soulstones.io@gmail.com',
+        user: process.env.EMAIL_SENDER,
         pass: process.env.EMAIL_APP_PASS,
       },
     });
